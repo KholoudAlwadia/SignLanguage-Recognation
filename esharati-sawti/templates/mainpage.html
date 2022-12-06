@@ -1,0 +1,123 @@
+ <!DOCTYPE html>
+ <html lang="ar">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=rabar" />
+    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=alsarout-bold" />
+
+    <link rel="stylesheet" href="C:\Users\khokha\PycharmProjects\esharati-sawti\static\style.css">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>my sign talk</title>
+ </head>
+ <body>
+    <section id ='header'> 
+      <div class="container">
+           <div class="header-text">
+            <h1> إشارتي صوتي </h1>
+           <span class="line"></span>
+            <p>الموقع الوحيد لترجمة لغة الإشارة السعودية
+                 <br>كميراتك الأن هي البوابة 
+                 ... لعالم اكثر تناغم </p>
+                 <button class="common-btn" onclick="location.href = href='#viewer' "> أكتشف مميزاتنا</button>
+                 <div class="sq">
+                    <span class="sq1"></span>
+                    <span class="sq2"></span>
+                    <span class="sq3"></span>   
+                 </div>  
+          </div> 
+        </div>
+    </section>
+
+
+    <section id ='viewer'>
+        <div class="viewer-row">
+
+            <div class="viewer-col"><button onclick="location.href = href='#learn'"><img src="static\images\Lesson-bro.png"> <h4>تعلم معنا </h4></button></div>
+            <div class="viewer-col"><button onclick="location.href = href='#trans'"><img src="static\images\Online translator-amico.png"> <h4>ترجمة مباشرة  </h4></button></div>
+            <div class="viewer-col"><button onclick="location.href = href='#dic'"><img src="static\images\Dictionary-amico.png"> <h4>قاموس الكلمات المتوفرة  </h4></button></div>
+        </div>
+    </section>
+
+
+    <section id ='learn'> 
+            <dev class="lift-text-learn-col">
+               <h1>تعلم معنا لغةالإشارةالسعودية </h1>
+               <p> تعلم لغة الاشارة بأسلوب سهل وسلس بتطبيق عملي مباشر </p>
+                <a href=learnpage ><button class="button-55">تعلم الأن</button></a>
+            </dev>
+
+            <dev class="right-img-learn-col">
+                <img src="static\images\Webinar-amico1.png">
+            </dev>
+    </section>
+
+    <section id ='trans'> 
+    <dev class="left-img-trans-col">
+        <img src="static\images\Mask for the deaf-amico1.png">
+    </dev>
+
+    <dev class="right-text-trans-col">
+        <h1>ترجمة لغة الإشارة</h1>
+        <p>ترجمة مباشرة  للغة الاشارة بكل سهولة و سلسلاسة </p>
+        <a href=learnpage > <button class="button-555" onclick="location.href = href='learnpage.html'">ترجم الأن</button></a>
+     </dev> 
+    </section>
+    <section id ='dic'> 
+    <dev class="right-img-dic-col">
+        <img src="static\images\Dictionary-amico.png">
+    </dev>
+
+    <dev class="lift-text-dic-col">
+       <h1>قاموس الكلمات المتوفرة</h1>
+       <div class="continer">
+       <div class="card">
+        
+         <div class="q">
+          <p>شكرا</p>
+        </div>
+        <div class="q">
+          <p>السلام عليكم</p>
+          </div>
+          <div class="q">
+          <p >عليكم السلام</p>
+          </div>
+          <div class="q">
+          <p>نعم</p>
+          </div>
+          <div class="q">
+          <p>لا</p>
+          </div>
+          <div class="q">
+          <p>صباح النور</p>
+          </div>
+          <div class="q">
+          <p>حسنا</p>
+          </div>
+          <div class="q">
+          <p>انا اسف </p>
+          </div>
+          <div class="q">
+          <p>مع السلامة</p>
+          </div>
+      </div>
+    </div>
+    </dev>
+  </section>
+
+<script type="text/javascript">
+    document.getElementById("common-btn").onclick = function () {
+        location.href = "#viewer";
+    };
+      document.getElementById("button-555").onclick = function () {
+        location.href = "learnpage.html";
+    };
+</script>
+
+
+ </body>
+ </html>
+
+ 

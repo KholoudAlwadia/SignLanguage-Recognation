@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=rabar" />
+    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=alsarout-bold" />
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet" href="C:\Users\khokha\PycharmProjects\esharati-sawti\static\style.css">
+
+    <title>learn SSL</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+    integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+    crossorigin="anonymous">
+    </script>
+  <script type="text/javascript" charset="utf-8">
+    var socket = io();
+    socket.on('connect', function () {
+      socket.emit('my event', { data: 'I\'m connected!' });
+    });
+  </script>
+
+
+</head>
+<body>
+    <section id ='header'> 
+        <dev class="container">
+             <div class="header-text">
+              <h1> إشارتي صوتي </h1>
+             <span class="line"></span>
+              <p>الموقع الوحيد لترجمة لغة الإشارة السعودية
+                   <br>كميراتك الأن هي البوابة 
+                   ... لعالم اكثر تناغم </p>
+                 <a href="home"> <button class="common-btn"onclick="location.href = href='#viewer' "> الرئيسية</button></a>
+                   <div class="sq">
+                      <span class="sq1"></span>
+                      <span class="sq2"></span>
+                      <span class="sq3"></span>   
+                   </div>
+            </div> 
+          </div>
+        </dev>
+      </section>
+      <section id =video-dic>
+            <dev class="right-video-dic-col">
+                <video controls playsinline id="player" ></video>
+            </dev>
+            <dev class="lift-text-dic-col">
+                <h1>شاهد الفيديو وتعلم </h1>
+               <div class="continer">
+               <div class="card">
+
+
+                 <div class="q">
+                    <button class="btn"  data-video-url=" https://api.esharat.shi.org.sa/files/%D8%B4%D9%83%D8%B1%D8%A7.mp4">
+                  <p>شكرا</p>
+                </button>
+                </div>
+
+
+                <div class="q"><button class="btn" data-video-url="https://api.esharat.shi.org.sa/files/%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85.mp4">
+                  <p>السلام عليكم</p>
+                  </button>
+                  </div>
+
+
+                  <div class="q">
+                  <button class="btn" data-video-url="https://api.esharat.shi.org.sa/files/%D9%88%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85.mp4">
+                  <p >عليكم السلام</p>
+                  </button>
+                  </div>
+
+                  
+                  <div class="q">
+                    <button class="btn" data-video-url="https://api.esharat.shi.org.sa/files/%D9%86%D8%B9%D9%85.mp4">
+                  <p>نعم</p>
+                  </button>
+                  </div>
+
+
+                  <div class="q">
+                    <button class="btn"  data-video-url="https://api.esharat.shi.org.sa/files/%D9%84%D8%A7.mp4">
+                  <p>لا</p>
+                  </button>
+                  </div>
+                  <div class="q">
+                    <button class="btn" data-video-url="https://api.esharat.shi.org.sa/files/%D8%B5%D8%A8%D8%A7%D8%AD%20%D8%A7%D9%84%D9%86%D9%88%D8%B1.mp4">
+                  <p>صباح النور</p>
+                  </button>
+                  </div>
+
+
+                  <div class="q">
+                    <button class="btn" data-video-url="https://api.esharat.shi.org.sa/files/%D8%AD%D8%B3%D9%86%D8%A7.mp4">
+                  <p>حسنا</p>
+                  </button>
+                  </div>
+
+
+                  <div class="q">
+                    <button class="btn" data-video-url="https://api.esharat.shi.org.sa/files/%D8%A7%D9%86%D8%A7%20%D8%A7%D8%B3%D9%81.mp4">
+                  <p>انا اسف </p>
+                  </button>
+                  </div>
+                  
+                  <div class="q">
+                    <button class="btn" data-video-url="https://api.esharat.shi.org.sa/files/%D9%85%D8%B9%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%D8%A9.mp4">
+                  <p>مع السلامة</p>
+                  </button>
+                  </div>
+              </div>
+            </div>
+            </dev>
+          </section>
+
+      </section>
+
+
+      <script>
+      function swapVideo() {
+        player.src = this.getAttribute("data-video-url");
+        player.load();
+        player.play();
+    }
+    
+    var videoPlayButtons = document.querySelectorAll("button"),
+        player = document.getElementById("player");
+    
+    for (var i=0; i<videoPlayButtons.length; i++){
+        videoPlayButtons[i].addEventListener('click', swapVideo);
+    }</script>
+
+
+    
+<section id=" vidd">
+    <div class="toggle-container">
+<div class="switch-container">
+        <a class="ui-tooltip" title="Toggle Keypoint display on webcam screen.">
+          <p class="switch-label" style="cursor: help;">Display Keypoints</p>
+        </a>
+        <label class="switch">
+          <input type="checkbox" id="switch1" onclick="switched(this)" checked>
+          <span class="slider_switch round"></span>
+        </label>
+      </div>
+    </div>
+
+  <script>
+         //Toggle Keypoints Switch
+      var switchValues = {};
+      function switched(switchElement) {
+        switchValues[switchElement.id] = switchElement.checked;
+        //console.log(switchValues[switchElement.id]);
+        var toggle_value = [{ "toggle": switchValues[switchElement.id] }];
+        $.ajax({
+          type: "POST",
+          url: "/process_toggle_value",
+          data: JSON.stringify(toggle_value),
+          contentType: "application/json",
+          dataType: 'json',
+          success: function (result) {
+            //console.log("Result:");
+            //console.log(result);
+          }
+        })
+      }
+  </script>
+<div class="video-container">
+      <img id="video-feed" src="{{ url_for('video_feed') }}" alt='Webcam display' />
+            <button type="button" class="common-btn" onclick="show()" id="btnID">جرب الان</button>
+    </div>
+
+    <script>
+function show() {
+
+            /* Access image by id and change
+            the display property to block*/
+            document.getElementById('video-feed')
+                    .style.display = "block";
+
+            document.getElementById('btnID')
+                    .style.display = "none";
+        }
+
+
+
+</script>
+
+</section>
+</body>
+</html>
+
